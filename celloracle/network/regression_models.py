@@ -55,6 +55,9 @@ def get_bayesian_ridge_coefs(target_gene, gem, gem_scaled, TFdict, cellstate=Non
         cellstate_name = list(cellstate.columns)
         reg_all += cellstate_name
 
+    # Sort to fix seed
+    reg_all = sorted(reg_all)
+
 
     # prepare learning data
     if scaling:
@@ -105,6 +108,8 @@ def get_bagging_ridge_coefs(target_gene, gem, gem_scaled, TFdict, cellstate=None
         cellstate_name = list(cellstate.columns)
         reg_all += cellstate_name
 
+    # Sort to fix seed
+    reg_all = sorted(reg_all)
 
     # prepare learning data
     if scaling:
